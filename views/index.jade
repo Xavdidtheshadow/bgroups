@@ -1,0 +1,9 @@
+html(ng-app="bgroups")
+  head
+    title!= title
+    link(rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css")
+  body
+    .container(ng-contoller="MainCtrl")
+        h1 Yo
+        p
+            {{message}}
