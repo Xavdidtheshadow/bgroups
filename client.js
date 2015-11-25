@@ -1,7 +1,9 @@
+require('angular');
 
 var app = angular.module('bgroups', []);
 
 app.controller('MainCtrl', ['$scope',
   function($scope) {
-    $scope.greeting = { text: 'Hello' };
+    console.log('in scope');
+    $scope.message = "browsered";
 }]);

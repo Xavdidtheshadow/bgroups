@@ -1,7 +1,11 @@
+var browserify = require('browserify-middleware');
 var express = require('express');
 var app = express();
 
 app.set('view engine', 'jade');
+app.use('/public', express.static('public'));
+
+app.get('/public/app.js', browserify(__dirname + '/client.js'));
 
 app.get('/', function (req, res) {
   // res.send('Hello World!');
