@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 
 app.set('view engine', 'jade');
-app.use('/public', express.static('public'));
+app.set('views', __dirname);
 
 app.get('/public/app.js', browserify(__dirname + '/client.js'));
 
