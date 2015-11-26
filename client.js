@@ -11,16 +11,6 @@ app.controller('MainCtrl', ['$scope',
     $scope.makeGroup = function(){
       var allNames = shuffle($scope.model.names.split('\n'));
       $scope.model.groups = split(allNames, $scope.model.numGroups);
-
-      console.log($scope.model.groups);
-    };
-
-    $scope.reset = function(){
-      $scope.model = {
-        names: null,
-        numGroups: 3,
-        groups: []
-      };
     };
 
     // http://stackoverflow.com/a/12646864/1825390
@@ -45,5 +35,9 @@ app.controller('MainCtrl', ['$scope',
     }
 
     // MAIN
-    $scope.reset();
+    $scope.model = {
+      names: null,
+      numGroups: 3,
+      groups: []
+    };
 }]);

@@ -2,18 +2,37 @@ html(ng-app="bgroups")
   head
     title!= bGroups
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
+    style.
+      ul {list-style-type: none;}
   body
     .container(ng-controller="MainCtrl")
-      h1 Band Groups!
+      h1 Groups of Things
       
-      p Paste names in, one per line {{message}}
+      .col-md-4
+        form
+          .form-group
+            label Names
+            textarea.form-control(
+              ng-model="model.names" 
+              rows="25" 
+              cols="40" 
+              placeholder="Paste one per line"
+              autofocus
+            )
 
-      .text
-        textarea(ng-model="model.names" rows="25" cols="40")
+          .form-group
+            label Number of Groups
+            input.form-control(type="number" ng-model="model.numGroups")
 
-      br
+          button.btn.btn-default(ng-click="makeGroup()")
+            | Group 'em!
 
-      button.btn.btn-default(ng-click="makeGroup()")
-        | Group 'em!
+      .col-md-6.col-md-offset-2
+        ul(ng-show="model.groups" ng-repeat="group in model.groups")
+          li
+            h3 Group {{$index}}
+            ol
+              li(ng-repeat="person in group").
+                {{person}}
 
     script(src="/public/app.js")
