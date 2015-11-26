@@ -1,14 +1,13 @@
 {
   "name": "bgroups",
   "version": "1.0.0",
-  "description": "Split people into groups",
+  "description": "Split things into groups",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "David Brownman",
   "license": "ISC",
-  "private": true,
   "dependencies": {
     "angular": "^1.4.8",
     "browserify-middleware": "^7.0.0",
