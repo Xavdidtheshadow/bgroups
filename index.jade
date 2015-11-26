@@ -1,12 +1,19 @@
 html(ng-app="bgroups")
   head
-    title!= title
+    title!= bGroups
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
   body
     .container(ng-controller="MainCtrl")
-      h1 Yo
-      p
-        | {{message}}
+      h1 Band Groups!
+      
+      p Paste names in, one per line {{message}}
+
+      .text
+        textarea(ng-model="model.names" rows="25" cols="40")
+
+      br
+
+      button.btn.btn-default(ng-click="makeGroup()")
+        | Group 'em!
 
     script(src="/public/app.js")
-      
