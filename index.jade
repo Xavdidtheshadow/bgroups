@@ -4,6 +4,9 @@ html(ng-app="bgroups")
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
     style.
       ul {list-style-type: none;}
+      [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+      }
   body
     .container(ng-controller="MainCtrl")
       h1 Groups of Things
@@ -27,7 +30,7 @@ html(ng-app="bgroups")
           button.btn.btn-default(ng-click="makeGroup()")
             | Group 'em!
 
-      .col-md-6.col-md-offset-2
+      .col-md-6.col-md-offset-2(ng-cloak)
         ul(ng-show="model.groups" ng-repeat="group in model.groups")
           li
             h3 Group {{$index}}
