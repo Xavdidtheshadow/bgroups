@@ -13,6 +13,11 @@ app.controller('MainCtrl', ['$scope',
       $scope.model.groups = split(allNames, $scope.model.numGroups);
     };
 
+    // dunno why this doesn't work inline
+    $scope.indexChar = function (index) {
+      return String.fromCharCode(65 + index);
+    };
+
     // http://stackoverflow.com/a/12646864/1825390
     function shuffle(array) {
       for (var i = array.length - 1; i > 0; i--) {

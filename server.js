@@ -1,5 +1,6 @@
 var browserify = require('browserify-middleware');
 var express = require('express');
+var favicon = require('serve-favicon');
 var app = express();
 
 app.set('view engine', 'jade');
@@ -7,6 +8,7 @@ app.set('views', __dirname);
 app.set('port', (process.env.PORT || 3000));
 
 app.get('/public/app.js', browserify(__dirname + '/client.js'));
+app.use(favicon(__dirname + '/favicon.ico'));
 
 app.get('/', function (req, res) {
   // res.send('Hello World!');

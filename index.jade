@@ -33,7 +33,7 @@ html(ng-app="bgroups")
       .col-md-6.col-md-offset-2(ng-cloak)
         ul(ng-show="model.groups" ng-repeat="group in model.groups")
           li
-            h3 Group {{$index}}
+            h3 Group {{ indexChar($index) }}
             ol
               li(ng-repeat="person in group").
                 {{person}}
