@@ -4,6 +4,7 @@ var app = express();
 
 app.set('view engine', 'jade');
 app.set('views', __dirname);
+app.set('port', (process.env.PORT || 3000));
 
 app.get('/public/app.js', browserify(__dirname + '/client.js'));
 
@@ -12,7 +13,7 @@ app.get('/', function (req, res) {
   res.render('index', { title: 'Hey', message: 'Hello there!'});
 });
 
-var server = app.listen(3000, function () {
+var server = app.listen(app.get('port'), function () {
   var host = server.address().address;
   var port = server.address().port;
 
